@@ -1,0 +1,147 @@
+What is difference between dom and any locators?
+
+Dom ->Design of the Wepbage -->holding the attributes of each and every webelement 
+Locators-->Selenium method to loacate any element in related to the attributes in dom
+
+what is the diff b/w run time error and compile time error
+Before the execution if any error occured its a compile time , After the execution if any occured its a run time
+
+
+Handle Dropdown
+---------------
+Confirm ->webelement --><select>
+
+1.Locate the dropdown element
+
+Use the Selenium Class
+Select  obj=new Select(Webelement)
+
+obj.pickonthe option
+
+3 ways 
+index-position of the option element-Starts with zero
+value -attribute of the option tag
+text -black text of the dd element
+
+
+
+To Choose XPath
+When no locators are stable
+numbers, duplicates , white spaces
+
+Xpath-->Xml Path-->address of the webelement
+
+Absolute Xpath --long path
+syntax
+(/html/body/div[2]/div[2]//form/p[1])/input
+Xpath -->index always starts with 1
+--------------------------------------------------
+Relative Xapth --Short path  (5 ways)
+---------------------------
+always // -->current node of the element
+//tagName
+
+1. Attribute based relative xpath:
+syntax:
+------
+//tagName[@attribute ='attributeValue']
+//li[@data-sorttype='plth'] -->snapdeal
+//input[@type='text']
+
+2. Text based realtive xpath
+syntax:
+-------
+//tagName[text()='BlackTextValue']
+//label[text()='Username']
+//div[text()='Training Shoes']
+
+3.Partial Attribute based xpath
+------------------------------
+syntax:
+//tagName[contains(@attribute,'attributevalue')]
+//input[contains(@id,'user')]
+
+4.Partial Text based XPath
+-------------------------
+//tagName[contains(text(),'textValue')]
+//p[contains(text(),'HRV')]
+
+5.Collection based Xpath -->use index
+syntax:
+----------------------------
+(Any relative xpth)[index]
+(//input[@class='inputLogin'])[2]
+
+goal -->locator/xpath -->unique for the webElement
+
+classroom:
+---------
+
+Find the xpath 
+https://www.nykaa.com/    -> Search box  using (name) attribute
+
+//input[@placeholder ='Search on Nykaa']
+
+https://www.swiggy.com/   -> Text based (food button)
+//span[text()='FIND FOOD']
+
+https://www.axisbank.com/ -->Partial attribute based xpath(Login button)
+//div[contains(@class,'loginClk')]
+
+https://www.amazon.in/	--> Partial text based xpath (Bluetooth Calling)
+
+//h2[contains(text(),'Bluetooth Calling')]
+
+
+Advanced Xpath (8-types)-->axes xpath/relationship based xpath
+------------------  
+Relation with other elements
+
+Parent to child:
+---------------
+syntax: (top to bottom)
+(Any Relative xpath of Parent)/tagname of child[relative xpath of child)
+//p[@class='top']/input
+
+child to parent:
+--------------
+syntax: (bottom to top)
+(Any relative xpath of child)/parent::tagname of the parent 
+//input[@id='username']/parent::p
+
+GrandParent to GrandChild
+----------------------------
+syntax:
+(Any Relative xpath of grandParent)//tagname of grandchild[relative xpath]
+//form[@id='login']//input[@id='username']
+
+GrandChild to GrandParent
+-------------------------
+syntax:
+----------
+(Any relative xpath of grandChild)/ancestor::tagname 
+//input[@id='password']/ancestor::p
+//input[@type='password']/ancestor::div
+
+
+sibling:(2 ways)
+
+Elder to Younger
+(Any relative xpath of Elder)/following-sibling::tagName of the younger
+//label[text()='Username']/following-sibling::input
+
+younger to elder 
+(Any relative xpath of younger)/preceding-sibiling::tagname of Elder
+//input[@name='PASSWORD']/preceding-sibling::label
+
+Cousin:(2ways)
+
+Elder to younger
+(Any relative xpath of Elder)/following:: tagname
+
+//input[@name='USERNAME']/following::input
+
+Younger to elder:
+(any relative xpath of younger)/preceding::tagname of elder
+//input[@class='decorativeSubmit']/preceding::input
+
