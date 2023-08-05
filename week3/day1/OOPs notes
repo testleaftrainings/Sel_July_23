@@ -1,0 +1,82 @@
+Today's Agenda:
+--------------
+9.00AM  to 10.00AM  -OOPs Introduction &Inheritance
+10.00Am to 10.15AM  -Classroom
+10.15AM to 11.30M   -Abstraction
+11.30AM to 11.40AM  -Break
+11.40AM to 12.00PM  -Classroom
+12.00PM to 12.40PM  -Polymorphism
+12.40PM to 1.00PM   -Classroom
+
+---------------------------------------
+
+OOPs --> Object Oriented Programming 
+
+Reusability 
+Modularity
+Reduces redundancy
+Data Security
+Improves Coding Standard
+
+4 pillars of OOPs:
+----------
+Abstraction  -->design 
+
+Inheritance  -->acquring the properities of parent
+
+Polymorphism -->Many form (one functionality in many forms)
+
+Encapsulation -->capsule -->data binding
+
+
+Inheritance:
+-----------
+   -acquring the property of parent
+   -building a relationship between two classes
+   - Is - A relation
+
+Uses extends keywords
+ Single inheritance --> Vehicle(Parent) -->Car(Child)
+										-->Auto (child)
+
+Hiererchial Inheritance-->vehicle(Parent)-->(Car & Auto)
+Multi-level Inheritace -->Vehicle(GrandParent)-->Car(Parent)-->BMW(Chid Class)
+Multiple inheritance -not possible at class level 
+
+Create iOS (Super Class)    
+startApp    
+increaseVolume   
+shutdown
+2) Create iPhone extends iOS   
+makeCall   
+sendSMS
+3) Create iPad extends iOS    
+watchMovie
+4) Create a class (MyPhone) with main method (Only for execution part)    
+Create Object for iPhone    
+Confirm you can access 5 methods !!  
+Confirm you cannot access iPad methods.
+
+Inheritance is possible between two similar classes
+
+class extends other class
+interface extends interface
+class extends the abstract class
+
+
+Abstraction: --> design /model /blueprint
+
+Interface class (RBI)
+implemented in Concrete class(AxisBank)
+abstract class HomeLoan
+extended by the concerete class (AxisBank)
+axisBank extends abstractclass implements interface
+
+
+Polymorphism -->One funtionality in many forms 
+
+Method Overloading /Compile time polymorphism/Early biding
+-->Within a class(SameClass) -->same methodName different arguments
+
+Method Overriding /Runtime Polymorphism /Late Binding
+-->Same method signature with same arument in different class provided works with inheritace
