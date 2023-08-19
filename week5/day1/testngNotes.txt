@@ -1,0 +1,164 @@
+Today's Agenda:
+--------------
+9.00AM  to 9.20AM   -TestNg Introduction
+9.20AM  to  9.35AM  -Basic TestNg Script
+9.35AM  to  9.50AM	-Classroom
+9.50Am  to 10.10AM  -Sequential Execution 
+10.10AM to 10.30AM  -Classroom
+10.30Am to 10.45AM	-Break
+10.45AM to 11.45AM  -Parallel Execution &Report
+11.45AM to 12.00AM  -Classroom
+12.00PM to 12.05PM  -Break
+12.05PM to 1.00PM   -Annotations
+
+
+
+TestNg-->Test Next generation
+ -->Unit testing framework/ Execution framework
+Steps to convert plain Script to TestNg Script
+---------------------------------------------
+Step:1 Convert the main method into a normal method
+       Remove the static keyword and String[]args
+	   renamed the method name with meaniful name
+	   Annotate the method with @Test
+	   
+	   @Test-->import from testng 
+	   org.testng.annotations.Test;
+
+To exceute all the testcase in single run
+-----------------------------------------
+Select the testcase with @Test 
+right click-->testNG-->convert to testng -->xml file
+
+xml file
+
+<suite name="Leaftaps">  -->root tag -->all test set
+  <test name="Test"> -->modules /test category
+    <classes>
+					"packagename.classname"
+          <class name="testcase.CreateLead"/>
+          <class name="testcase.DeleteLead"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+https://github.com/TestLeafPages/testcases
+
+//report generation
+Once after execution-->refresh the project -->test-output folder-->emailable report &index.html
+-->testng-failed.xml
+
+// to have the error log in the normal console when executed from xml file
+verbose= 0 to 10
+5
+
+
+Annotations  -->piece of information given to the logic
+------------
+
+Hirerachy of execution
+
+One @Test method:
+-----------------
+BeforeSuite  -->configuration report generation
+BeforeTest   -->Test set level config db
+BeforeClass  -->classlevel ->testdata
+BeforeMethod -->for each @Test /common functionalituies
+  TestCase:1
+AfterMethod  -->close
+After class -->close 
+AfterTest-->cose db
+AfterSuite -->close connection
+
+Two @test methods
+
+BeforeSuite
+BeforeTest
+BeforeClass
+BeforeMethod
+   TestCase:1
+AfterMethod
+
+BeforeMethod
+   Testcase:2
+AfterMethod
+
+After class
+AfterTest
+AfterSuite 
+
+Two Classes  with 4 @Test methods
+----------------------------------
+BeforeSuite
+BeforeTest
+
+Leaftaps
+BeforeClass
+BeforeMethod
+	TestCase:1
+AfterMethod
+
+BeforeMethod
+	Testcase:2
+AfterMethod
+After class
+
+Leadstestcases
+createLead
+deleteLead
+
+AfterTest
+AfterSuite
+
+Two <test>  each 2 classes
+--------------------------
+BeforeSuite <test> Test
+	BeforeTest
+	BeforeClass
+	BeforeMethod
+		TestCase:1
+	AfterMethod
+
+	BeforeMethod
+	Testcase:2
+	AfterMethod
+	After class
+	
+	createLead
+	deleteLead
+AfterTest</test>
+	
+BeforeTest <test> Test 1
+BeforeClass
+BeforeMethod
+TestCase:1
+AfterMethod
+BeforeMethod
+Testcase:2
+AfterMethod
+After class
+createLead
+deleteLead
+AfterTest </test>
+AfterSuite
+
+Using annotations 
+Coomn funntionality can be kept in a one class for the reusabilty 
+
+Create a class baseclass
+ Create a commonclass 
+Move all the common steps to common class (remove those steps in testcases)
+Use @BeforeMethod and @AfterMethod annotation to define your preCondition and postCondition Methods
+Extend the common class to leads classes
+ 
+
+
+
+
+
+
+
+
+
+
+
