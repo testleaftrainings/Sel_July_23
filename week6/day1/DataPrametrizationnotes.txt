@@ -1,0 +1,100 @@
+Today's Agenda:
+--------------
+
+9.00AM 	to 	9.45AM 	-Static Parametrization
+9.45AM 	to 10.05AM	-Classroom
+10.00AM to 10.45AM	-Data Provider
+11.00AM to 11.20AM	-Classroom
+11.20AM to 11.35AM  -Break
+11.35AM to 12.15PM	-Dynamic Parametrization
+12.15PM to 12.30PM	-Classroom
+12.30PM to 1.00PM   -TestNg Integration with Excel
+
+Parmatrization:
+--------------
+one data -->multiple funtionality
+multiple data -->one functionality
+
+Static Parametrization 
+  Xml file
+  Common data for testcases
+  
+  
+<parameter> -->xml file
+@Parameters
+
+Url
+Credentials- Username and Password
+  
+  In Xml file 
+  <paramater></parameter> -->set the key and value for the static data to be passed in the methods
+  
+  Suite level and testlevel
+  
+  Suite level ->to configure test data common to all the <test>
+  test level-->to configure  test data common to <classes>
+  
+  
+  Cross browser testing
+  --------------------
+  Suite level -->url and credential common for <test>
+  test level -->browser common for  <classes>
+  
+  
+  cname          fname lname -->represents the test step variable
+  Testleaf		Vidya	R
+  Qeagle 		Aravind	R
+  Wipro			Suresh
+  
+  String[][] data= new String[row count][col count]
+  
+  Each test data is considered as Individual testcase
+
+Dynamic parametrization
+      Called from Excel
+
+Excel Integration:
+-------------------
+Library ->Apache POI
+     POI
+	 POI-ooxml
+	 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+	 
+	 
+	 
+docx
+docx
+
+xls
+xlsx
+
+1.Set the path of the excel file
+2.Find the sheet
+3.Get the number of rows from sheet
+4.Get the number col with help of a row
+5.Iterate through each row and column to read the data from excel sheet(nested loop)
+6.create a 2D String array in ReadExcel Java class (out side the forloop)
+7.Assign the string cellValue to the String array
+8.Comment or delete hard code data of dataprovider 
+and replace with excel data
+9.Run the Create lead and confirm its working fine
+
+
+
+
+
+
+
+
+
