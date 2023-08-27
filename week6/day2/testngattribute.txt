@@ -1,0 +1,102 @@
+Today's Agenda
+--------------
+9.00AM 	to 	9.45AM 	-Common Integration
+9.45AM 	to 10.05AM	-Classroom
+10.00AM to 11.15AM	-TestNg Attributes
+11.15AM to 11.30AM	-Break
+11.30AM to 12.00AM  -Explicit Wait
+12.00AM to 12.30PM	-Constructor
+12.30PM to 1.00PM	-Static Keyword
+
+
+Delete Lead
+Added the same DataProvider () in DeleeteLead testcase
+passed the arg into method 
+@test(dataProvider) 
+
+In Excel ->file is set delete lead
+
+
+Common Integration:
+
+Step:1 Add input argument to ReadExcel method
+Step:2 Move the dataProvider method to baseclass
+Step:3 Declare a public string varilable filename in baseclass
+step:4 pass that filename into dataProvider where the readExcel(filename)
+step:5 Create a method in testcase as setValues and assign the filename with respective excel file
+		annotate the method @BeforeTest
+
+
+@BeforeSuite
+  @BeforeTest
+	@BeforeClass
+		@DataProvider -->to pass data to the @TestMethod -->filename
+	   @BeforeMethod
+	     @Test
+
+xml-->@beforeclass(set filename)-->DataProvider-->readExcelfile-->@beforeMethod-->@test-->@AfterMethod
+
+
+Attributes -->to set at @Test()
+
+1.priority -->to prioritize the testcase for execution
+will take the least /low value will first to be executed
+default value =0
+Works within the class 
+not works between the classes (xml)
+
+2.invocationCount->to call the @Test multiple times 
+default Value= 1
+threadpoolsize -->control the number of browsers
+
+thread-count -->work between the classes and set at suite level(xml file) along with parallel 
+threadPoolSize-->work within the class at @test(attribute od @Test) when required run the @Test method parallel
+-comes along with invocationCount
+
+
+3.enabled-->to ignore any testcase from execution (set to false)
+default value -true
+
+4.timeOut -->maximum number of miliseconds for a test to run
+
+5.dependsOnMethods-->to inject dependency between the methods also across methods in different classes
+
+
+dependsOnMethods ="methods"
+dependsOnMethods={"packagename.classname.methodname","packagename.classname.methodname"}
+
+6.alwaysRun=true -->execute the dependent testcase irrespective of the failure of individual @Test
+
+
+Explicit Wait:
+-------------
+
+Implicit Wait -->global wait -->applicable on all findElement and findElements 
+Java wait -Thread.sleep()-pause the thread from execution  
+    -slows down the execution
+Explicit wait -->WebDriverwait
+   -->based on the condition -->conditional wait
+ to be clickable 
+ visibility of the element
+ text to  
+is displayed
+is enabled 
+isSelected
+
+
+Static keyword -->class level memeory -->shared variable /common variables /methods/block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
