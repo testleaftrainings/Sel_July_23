@@ -1,0 +1,75 @@
+Today's Agenda
+------------------
+9.00AM to 9.30AM   - Cucumber Introduction
+9.30AM to 10.00AM  - Basic Cucumber layers creation 
+10.00AM to 10.20AM - Classroom
+10.20AM to 10.30AM - Break
+10.30AM to 11.30AM - Cucumber Execution
+11.30AM to 12.00PM - Classroom
+break-5 mins
+12.05PM to 12.45PM   -Parametrization
+
+Pre-Requisite:
+--------------
+Cucumber Plugin and dependency:
+
+<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.10.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.10.1</version>
+		</dependency>
+		
+		
+Feature -->describe the functionality 
+Scenario -->describe the  particular of scenario to be tested
+
+Given-->represent the preconditions
+When -->represent the test Conditions
+Then -->positive expected result
+
+
+Create a class as StepDefinition under stepdef package
+Create individual mnormal java method for each feature step
+Add Annotations(@Given, @When @Then )on the top of every methos to map the feature file step with java method
+
+Create a java class as RunnerClass under runner package
+
+@CucumberOptions(features= {"src/test/java/features/TC001_Login.feature"},glue="stepDefinition")
+public class RunnerClass extends AbstractTestNGCucumberTests {
+
+	//to execute the cucumber script
+	//extend the runnerclass created under runner pkg with AbstractTestNGCucumberTests
+	//use @CucumberOptions on top of the class-->map feature file and step def 
+	//features=set the path of the featurefile to be executed
+	//glue =set the stepdef
+	
+	
+}
+
+
+UndefinedStepDefinition -->exception -->missed any feature step to be implemented
+DuplicateStepDefinition -->exception -->when feature step is implemented twice in java class
+
+CucumberOptions
+==============
+features-->the path of the feature file
+glue-->to connect or map the feature file step with the java class
+monochrome -->to get the readable console--set the value as monochrome=true
+publish- provide the html report
+
+read the data from the feature file--> {string}
+To send Multiple datas
+Scenario Outline
+Examples:
+|username|password|
+|'demoSalesManager'|'crmsfa'|
+
+
+
+
+
