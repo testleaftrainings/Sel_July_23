@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-03T13:23:12 IST" name="Suite" finished-at="2023-09-03T13:25:04 IST" duration-ms="111990">
+    <groups>
+    </groups>
+    <test started-at="2023-09-03T13:23:12 IST" name="Test" finished-at="2023-09-03T13:25:04 IST" duration-ms="111990">
+      <class name="testcase.CreateLeadTc">
+        <test-method is-config="true" signature="setValues()[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:23:12 IST" name="setValues" finished-at="2023-09-03T13:23:12 IST" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method is-config="true" signature="preCondition(java.lang.String)[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:23:17 IST" name="preCondition" finished-at="2023-09-03T13:23:28 IST" duration-ms="10872" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://leaftaps.com/opentaps/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preCondition -->
+        <test-method signature="runCreate(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:23:28 IST" name="runCreate" data-provider="fetchData" finished-at="2023-09-03T13:23:59 IST" duration-ms="31084" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Testleaf]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Vidya]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[R]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCreate -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:23:59 IST" name="postCondition" finished-at="2023-09-03T13:24:01 IST" duration-ms="1186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+        <test-method is-config="true" signature="preCondition(java.lang.String)[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:24:01 IST" name="preCondition" finished-at="2023-09-03T13:24:06 IST" duration-ms="5914" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://leaftaps.com/opentaps/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preCondition -->
+        <test-method signature="runCreate(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:24:06 IST" name="runCreate" data-provider="fetchData" finished-at="2023-09-03T13:25:03 IST" duration-ms="56427" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Qeagle]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Vinoth]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[S]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCreate -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:testcase.CreateLeadTc@3527942a]" started-at="2023-09-03T13:25:03 IST" name="postCondition" finished-at="2023-09-03T13:25:04 IST" duration-ms="1390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+      </class> <!-- testcase.CreateLeadTc -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

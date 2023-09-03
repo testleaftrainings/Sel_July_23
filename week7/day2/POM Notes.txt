@@ -1,0 +1,122 @@
+Today's Agenda
+------------------
+9.00AM to 10.00AM   - Cucumber Hooks
+10.00AM to 10.15AM  - classroom 
+10.15AM to 10.30AM  - tags
+10.30AM to 10.45AM  - Break
+10.45AM to 11.45AM  - POM Introduction
+11.40AM to 12.00PM  - POM basic configuration classroom
+12.00PM to 12.40PM  - sequential and Parallel execution
+12.45PM  to 1.00PM  - classroom
+
+
+To write the common feature steps shared by the scenarios ->use Keyword Background
+
+Limitation -->cannot be shared between the feature files
+It will not execute the common steps which are not in sequence
+
+can have common implementation methods (java methods) in stepdefinition for all the feature steps
+cannot have duplicated definition for the feature steps
+cannot share the common steps (Background) between the feature files
+
+Cucumber hooks
+--------------
+Hooks -->name given from ruby language
+Hooks -->hold common implementation of all the feature steps
+      -->java class with cumumber annotation
+	  
+Steps to implement  Hooks
+-------------------------
+Commented the Background steps
+Created a class as BaseClass under StepDefinition
+Create two normal java methods as preCondition and postCondition 
+    And annotated the methods with cucumber annotation as @Before and @After 
+All the java classes should extends the BaseClass
+
+io.cucumber.java.InvalidMethodException: You're not allowed to extend classes that define Step Definitions or hooks. class stepDefinition.CreateLead extends class stepDefinition.BaseClass
+    -->if you use Cucumber annotations in any classes java that cannot be extended to other java classes
+
+
+Background-->cannot access across the feature
+Hooks -->concept 
+Using cucumber annoation in a separate java class for preConditon and post condition steps
+Other java classes inherited the common configuration (Baseclass)
+we got the exception:
+you're not allowed to extend classes that define Step Definitions
+To resolve
+Created a separate java class to have only driver variable and dec as public static
+Inherited the driver declared java class to other java classes
+
+To avoid using individual class for driver dec
+configure the baseclass to inherit the AbstractestNgCucumberTests
+Declare the driver variable as public static
+change the @Before annotation to @BeforeMethod
+extends all the java classes with BaseClass incluind RunnerClass
+	
+	
+
+Only steps defined inside the background shd given in hooks?
+
+
+tags -->categorize/ control the execution can be at feature level or scenario level
+
+tags="@smoke"--> only execute the Scenarios with the tag@smoke
+tags="@smoke or @Functional" -->scenarios with smoke and sanity (either or condition)
+tags="@Smoke and @Funtional" -->executes the condition of both the tags are present in the scenarios
+tags="@not @Regression" -->ignore the given tag from execution
+
+POM -PageObjectModel
+--------------------
+design pattern
+It separates the PageObeject(Webelements and its action) and testcases
+
+
+Steps to implement POM
+-----------------------
+
+Step:1 Create a package as base 
+	    under that create a java class as ProjectSpecificMethod
+		Add the preCondition and PostCondition steps with @BeforeMethod and @AfterMethod 
+Step:2 Create a package as pages 
+       Create java classes based on the navigation of pages
+	   extend each java class with ProjectSpecificMethod
+	   
+step:3 Create normal java methods for each webelement and its actions
+  Method chaining
+  Page  Chaining  
+  this -->keyword in java to return the current class variables/method/constructor
+  Add return statement to return the page class object based on the navigation 
+  
+Step:4 Create a package as testcase 
+       Create respective java class for testcases an annotate the method with @Test
+	   Call the respective methods for the testcase for exectuion
+
+
+Steps to Implement DataProvider
+-------------------------------
+1. Apache POI library -> Needs to be added into pom.xml (done)
+2. Test data in excel document (done)
+3. Program to read the data from excel (done)
+4. DataProvider to supply data to the testcase (done)
+5. Need a method to define the excel document name (setValue())
+
+
+Steps to Integrate Data:
+-------------------------
+1. Convert the normal method to parameterized method with String argument to receive input
+	and replace the hardcoded value with argument variable
+2. Create arguments in the @Test method
+		Number arguments should be same as the number of data we need for the testcase
+3. Create excel workbooks under data folder in the project	
+4. Copy the ReadExcelData.java and paste it under utils package
+5. Copy the DataProvider code and excelFileName variable and paste in BaseClass
+		- Correct the import statement for ReadExcelData (from utils package)
+6. Integrate DataProvider with testcase
+
+
+
+
+
+
+
+
