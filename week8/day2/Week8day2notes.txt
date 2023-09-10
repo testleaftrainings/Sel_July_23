@@ -1,0 +1,71 @@
+Today's Agenda
+------------------
+8.40AM  to 9.00AM   - Quiz
+9.15AM  to 10.00AM  - Parallel Execution with prop files 
+10.00AM to 10.30AM  - Configuration Manager
+10.30AM to 10.45AM  - Break
+10.45AM to 11.30AM  - ExceptionHandling
+11.30Am to 11.40PM	- Quiz
+11.40AM to 12.15PM  - Extent Report
+12.15PM to 12.40PM  - Report Integration
+12.40Pm to 1.00PM   - Framework walkthrough
+
+--------------------------------------------
+Extent Report -->3rd party library 
+avenstack
+
+Add the dependency
+
+<dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+  </dependency>
+  
+  -Attach the screenshot
+  -Attach the videos
+  -chart 
+  
+  
+  Steps to integrate Extent Report with POM
+  ------------------------------------------
+  Step:1  Create a method as startReport() in ProjectSpecificMethod
+          Add first 3 lines of codes 
+		  And annotate the method with @BeforeSuite
+		  declare the ExtentReport as global variable
+		  
+ Step:2  Create a method as endReport() in ProjectSpecificMethod
+			Add the extent.flush()
+			Annotate the method with @AfterSuite
+
+ Step:3 Create a method as testDetails() in ProjectSpecificMethod
+         add the methods like createTest, assignAuthor,assignCategory
+		 and annotate the method with @BeforeClass
+		Declare the testName, testDesc, author, category as global variable
+
+ Step:4 In Testcase -->setValues -->assign the values for testName, testDesc, author, category 
+ 
+ Step:5 Create reportStep() with 2 arguments (msg, status) in ProjectSpecificMethod
+		 to get the status of the script along with screenshot
+		 
+ Step:6 Call the reportStep() from each step method using try / catch
+        - try block with pass status
+        - catch block with fail status
+ Step:7 Create a mathod takeSnap() and add the screenshot code  with filename appending with Random number
+		- add return statement to give random number as output 
+		
+Step:8 Call takeSnap() from reportStep() to attach the image to the steps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
